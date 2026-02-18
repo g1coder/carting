@@ -8,5 +8,11 @@ module.exports = {
         "selector-class-pattern": null,
         "selector-id-pattern": null,
         "scss/dollar-variable-pattern": null,
+        "selector-pseudo-class-no-unknown": [
+            true,
+            {
+                ignorePseudoClasses: ["global"],
+            },
+        ],
     },
 };

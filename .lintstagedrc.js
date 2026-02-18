@@ -1,12 +1,6 @@
-// eslint-disable-next-line
-const path = require("path");
-
-const buildEslintCommand = (filenames) =>
-    `next lint --file ${filenames.map((f) => path.relative(process.cwd(), f)).join(" --file ")}`;
-
 module.exports = {
+    "*.{md,json,css,scss}": "prettier --write",
+    "*.{js,jsx,ts,tsx}": ["prettier --write", "eslint --fix --no-warn-ignored --format=stylish --max-warnings=0"],
     "*.{ts,tsx}": () => "tsc --noEmit --skipLibCheck",
-    "*.{js,jsx,ts,tsx}": buildEslintCommand,
-    "*.{js,jsx,ts,tsx,md,json,css,scss}": "prettier --write",
-    "*.{css,scss,sass}": "stylelint",
+    "*.{css,scss,sass}": "stylelint --fix",
 };

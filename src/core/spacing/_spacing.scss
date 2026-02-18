@@ -1,0 +1,95 @@
+@use "sass:map";
+
+$base-spacing-number: var(--partners-base-spacing, 4);
+$spacing-scale: (
+    0: 0,
+    1: calc(#{$base-spacing-number} * 0.25 * 1px),
+    2: calc(#{$base-spacing-number} * 0.5 * 1px),
+    3: calc(#{$base-spacing-number} * 1px),
+    4: calc(#{$base-spacing-number} * 1.5 * 1px),
+    5: calc(#{$base-spacing-number} * 2 * 1px),
+    6: calc(#{$base-spacing-number} * 2.5 * 1px),
+    7: calc(#{$base-spacing-number} * 3 * 1px),
+    8: calc(#{$base-spacing-number} * 4 * 1px),
+    9: calc(#{$base-spacing-number} * 5 * 1px),
+    10: calc(#{$base-spacing-number} * 6 * 1px),
+    11: calc(#{$base-spacing-number} * 8 * 1px),
+    12: calc(#{$base-spacing-number} * 10 * 1px),
+    13: calc(#{$base-spacing-number} * 12 * 1px),
+    14: calc(#{$base-spacing-number} * 16 * 1px),
+    15: calc(#{$base-spacing-number} * 20 * 1px),
+    16: calc(#{$base-spacing-number} * 24 * 1px),
+);
+
+@mixin generate-spacing-classes() {
+    @each $key, $value in $spacing-scale {
+        .p-#{$key} {
+            padding: #{$value};
+        }
+
+        .px-#{$key} {
+            padding-left: #{$value};
+            padding-right: #{$value};
+        }
+
+        .py-#{$key} {
+            padding-top: #{$value};
+            padding-bottom: #{$value};
+        }
+
+        .pt-#{$key} {
+            padding-top: #{$value};
+        }
+
+        .pb-#{$key} {
+            padding-bottom: #{$value};
+        }
+
+        .pl-#{$key} {
+            padding-left: #{$value};
+        }
+
+        .pr-#{$key} {
+            padding-right: #{$value};
+        }
+
+        .m-#{$key} {
+            margin: #{$value};
+        }
+
+        .mx-#{$key} {
+            margin-left: #{$value};
+            margin-right: #{$value};
+        }
+
+        .my-#{$key} {
+            margin-top: #{$value};
+            margin-bottom: #{$value};
+        }
+
+        .mt-#{$key} {
+            margin-top: #{$value};
+        }
+
+        .mb-#{$key} {
+            margin-bottom: #{$value};
+        }
+
+        .ml-#{$key} {
+            margin-left: #{$value};
+        }
+
+        .mr-#{$key} {
+            margin-right: #{$value};
+        }
+    }
+}
+
+@function spacing($token) {
+    @if map.has-key($spacing-scale, $token) {
+        @return map.get($spacing-scale, $token);
+    }
+
+    @warn "Spacing token #{$token} not found in $spacing-scale";
+    @return null;
+}

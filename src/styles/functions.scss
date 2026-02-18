@@ -1,0 +1,7 @@
+@use "sass:math";
+
+@function scaled($value) {
+    $value-number: math.div($value, $value * 0 + 1);
+
+    @return calc((#{$value-number} / var(--partners-base-scale, 16)) * 1rem);
+}

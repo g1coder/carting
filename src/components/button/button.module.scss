@@ -1,0 +1,40 @@
+$transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+$defaultRadius: 2px;
+
+.root {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.8rem;
+    font-size: 14px;
+    line-height: 1.2;
+    white-space: nowrap;
+    cursor: pointer;
+    user-select: none;
+    border: none;
+    outline: none;
+    transition: $transition;
+    text-decoration: none;
+    font-style: normal;
+    font-weight: 400;
+    border-radius: var(--partners-button-radius-xs, $defaultRadius);
+    height: fit-content;
+    width: fit-content;
+    text-align: center;
+    position: relative;
+
+    &.fullWidth {
+        width: 100%;
+    }
+
+    &.disabled {
+        border-color: transparent;
+        color: var(--partners-button-disable-label, $gray-five);
+        cursor: not-allowed;
+        background-color: var(--partners-button-disable-bg, $gray-two);
+    }
+}
+
+.label {
+    flex: 1;
+}
