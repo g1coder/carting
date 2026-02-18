@@ -1,0 +1,47 @@
+{
+    "name": "nextjs-starter-kit",
+    "version": "0.1.0",
+    "private": true,
+    "scripts": {
+        "dev": "next dev --turbopack",
+        "build": "next build",
+        "start": "next start",
+        "lint": "next lint",
+        "lint:css": "stylelint **/*.{css,scss,sass}",
+        "format": "prettier **/*.{ts,tsx,md,json,js,jsx,css,scss} --write",
+        "test": "jest --reporters=default",
+        "prepare": "husky"
+    },
+    "dependencies": {
+        "@emotion/react": "11.14.0",
+        "@emotion/styled": "11.14.0",
+        "@hookform/resolvers": "4.1.1",
+        "@mui/icons-material": "6.4.5",
+        "@mui/material": "6.4.5",
+        "@tanstack/react-query": "5.66.7",
+        "axios": "1.8.4",
+        "next": "15.3.1",
+        "notistack": "3.0.2",
+        "react": "19.0.0",
+        "react-dom": "19.0.0",
+        "react-hook-form": "7.54.2",
+        "zod": "3.24.2"
+    },
+    "devDependencies": {
+        "@eslint/eslintrc": "3",
+        "@types/jest": "29.5.14",
+        "@types/node": "20",
+        "@types/react": "19",
+        "@types/react-dom": "19",
+        "eslint": "9",
+        "eslint-config-next": "15.1.7",
+        "husky": "9.1.7",
+        "jest": "29.7.0",
+        "lint-staged": "15.4.3",
+        "prettier": "3.5.1",
+        "sass": "1.85.0",
+        "stylelint": "16.14.1",
+        "stylelint-config-standard-scss": "14.0.0",
+        "typescript": "5"
+    }
+}
